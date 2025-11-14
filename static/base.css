@@ -1,0 +1,199 @@
+:root {
+	--delete: url('/static/svg/delete.svg');
+	--edit: url('/static/svg/edit.svg');
+
+	--cancel: url('/static/svg/cancel.svg');
+	--submit: url('/static/svg/submit.svg');
+}
+
+.wrap {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ctnr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+.le-form {
+	font-family: Arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	flex-direction: column;
+	gap: 25px;
+}
+
+.le-form .label {
+	font-size: 25px;
+	color: black;
+}
+
+.le-form input {
+	border-radius: 12px;
+	border: none;
+}
+
+.le-form .text-input {
+	padding: 15px;
+	width: 300px;
+	border: grey 2px solid;
+
+	font-size: 15px;
+}
+
+.le-form .text-input:focus {
+    border: #0688ff 2px solid;
+    outline: none;
+    box-shadow: #246dff8f 0px 0px 6px;
+}
+
+.le-form .text-form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	flex-direction: row;
+	gap: 15px;
+}
+
+.le-form .submit-btn {
+	padding: 14px;
+	font-size: 20px;
+	cursor: pointer;
+
+	background-color: #0079f0;
+	border: none;
+	color: white;
+}
+
+.block-contain {
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+
+	gap: 10px;
+}
+
+.block-contain .text-list {
+	font-size: 17px;
+	line-height: 25px;
+	font-family: Arial;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.block-contain .text-list li {
+	display: flex;
+	align-items: center;
+
+	position: relative;
+}
+
+.block-contain .text-list li::before {
+	content: '';
+	display: block;
+	margin: 0px 10px 0px 10px;
+	width: 4px;
+	height: 4px;
+	background-color: black;
+	border-radius: 999px;
+}
+
+.block-contain .text-list .li-inner {
+	height: 25px;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.block-contain .text-list div[class*='options'] {
+	display: flex;
+	gap: 4px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.block-contain .text-list .li-inner div[class*='options'] input {
+	width: 24px;
+	height: 24px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer
+}
+
+.block-contain .text-list .edit-note,
+.block-contain .text-list .submit-edit {
+	background-image: var(--edit);
+	background-size: 15px;
+}
+
+.block-contain .text-list .delete-note {
+	background-image: var(--delete);
+	background-size: 15px;
+}
+
+.block-contain .text-list .cancel-edit {
+	background-image: var(--cancel);
+	background-size: 12px;
+}
+
+.block-contain .text-list .li-inner div[class*='options'] input:hover {
+	background-color: rgb(0, 0, 0, 20%);
+}
+
+
+.block-contain .text-list .edit-note:hover,
+.block-contain .text-list .submit-edit:hover {
+	background-color: rgb(3, 150, 255, 20%) !important;
+}
+
+.block-contain .text-list .delete-note:hover,
+.block-contain .text-list .cancel-edit:hover {
+	background-color: rgb(255, 56, 56, 20%) !important;
+}
+
+.block-contain .text-list li:hover .li-inner div[class*='options'],
+.block-contain .text-list li.edit .li-inner div[class*='options']{
+	opacity: 1 !important;
+}
+
+.block-contain .text-list .li-inner div[class*='options'] input {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+.block-contain .text-list .text-input {
+	border: none;
+    font-size: 17px;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    height: 100%;
+}
+
+*.hidden {
+	display: none !important;
+}

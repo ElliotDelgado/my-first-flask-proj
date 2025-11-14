@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='wrap'>
+	<div class='block-contain'>
+		<div class='le-form'>
+			<div class="label">
+				Write something!
+			</div>
+
+			<div class="text-form">
+				<input type="text" class='text-input' name='text-input' placeholder='{{random_ok}}' maxlength='35'>
+				<input type='submit' class='submit-btn'>
+			</div>
+		</div>
+
+		{% if notes %}
+		<ul class='text-list'>
+			{% for note in notes %}
+			<li>
+				<div class='li-inner'>
+					<meta id="{{note.id}}"></meta>
+					<div class='label'>{{note.text}}</div>
+
+					<div class='note-options'>
+						<input type="button" class='delete-note'>
+						<input type="button" class="edit-note">
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+
+	</div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
